@@ -6,7 +6,19 @@ import { Component } from '@angular/core';
   styleUrls: ['home.page.scss'],
 })
 export class HomePage {
+  tarefas: string[] = 
 
-  constructor() {}
+  ];
 
+  novaTarefa: string = '';
+  constructor() { }
+
+  cadastrarTarefa() {
+    this.tarefas.push(this.novaTarefa);
+    this.novaTarefa = '';
+
+  }
+  removerTarefa(posicao) {
+    this.tarefas.splice(posicao, 1);
+  }
 }
